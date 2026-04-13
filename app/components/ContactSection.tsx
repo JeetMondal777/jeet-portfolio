@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import RotatingEarth from "@/components/ui/wireframe-dotted-globe";
 import { BsGithub } from "react-icons/bs";
@@ -20,6 +20,45 @@ const projectTypes = [
 
 export default function ContactSection() {
   const [selectedType, setSelectedType] = useState("Design System");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const handlePopulateMessage = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      if (customEvent.detail) {
+        setMessage(customEvent.detail);
+      }
+    };
+    window.addEventListener('populateContactMessage', handlePopulateMessage);
+    return () => window.removeEventListener('populateContactMessage', handlePopulateMessage);
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    let projectText = "";
+    if (selectedType !== "Other") {
+      projectText = `my project is kind of "${selectedType}"`;
+    } else {
+      projectText = `I want to discuss about my project`;
+    }
+
+    const whatsappMessage = `Hii, This side "${name}"
+${projectText}
+
+messege:
+${message}
+
+Thanks
+${name}
+${email}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    // Replace YOUR_PHONE_NUMBER_HERE with your actual WhatsApp number with country code (e.g., 919876543210 for India)
+    window.open(`https://wa.me/917866865971?text=${encodedMessage}`, '_blank');
+  };
 
   return (
     <section
@@ -30,7 +69,7 @@ export default function ContactSection() {
       <div className="mb-20">
         <div className="relative">
           <h2 className="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter text-on-surface mb-6 relative z-10">
-            Indigo <span className="text-primary italic">Synthesis.</span>
+            Let's <span className="text-primary italic">Connect.</span>
           </h2>
           <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -z-0" />
         </div>
@@ -64,7 +103,7 @@ export default function ContactSection() {
                   <div className="text-xs font-bold text-primary tracking-widest uppercase">
                     Email Me
                   </div>
-                  <div className="text-lg font-medium">hello@jeet.dev</div>
+                  <a href="mailto:hello@itsjeet.pro" target="_blank" className="text-lg font-medium">hello@itsjeet.pro</a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -121,7 +160,7 @@ export default function ContactSection() {
         {/* Right Column: Form */}
         <div className="lg:col-span-7">
           <div className="glass-panel p-8 md:p-12 rounded-xl border border-outline-variant/10 shadow-2xl relative">
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
                   <label className="block font-label text-sm font-medium text-on-surface-variant tracking-wide">
@@ -131,6 +170,9 @@ export default function ContactSection() {
                     className="w-full bg-surface-container-low border border-outline-variant/20 focus:border-primary/50 focus:ring-0 rounded-md py-4 px-5 text-on-surface placeholder:text-on-surface-variant/30 transition-all"
                     placeholder="Elon Musk"
                     type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -141,6 +183,9 @@ export default function ContactSection() {
                     className="w-full bg-surface-container-low border border-outline-variant/20 focus:border-primary/50 focus:ring-0 rounded-md py-4 px-5 text-on-surface placeholder:text-on-surface-variant/30 transition-all"
                     placeholder="elon@x.com"
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -175,6 +220,9 @@ export default function ContactSection() {
                   className="w-full bg-surface-container-low border border-outline-variant/20 focus:border-primary/50 focus:ring-0 rounded-md py-4 px-5 text-on-surface placeholder:text-on-surface-variant/30 transition-all resize-none"
                   placeholder="Describe the synthesis of your vision..."
                   rows={6}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
                 />
               </div>
 

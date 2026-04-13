@@ -45,6 +45,7 @@ export interface PricingCardProps extends VariantProps<typeof cardVariants> {
   buttonText: string;
   isCurrentPlan?: boolean;
   icon?: React.ReactNode;
+  onClick?: () => void;
 }
 
 const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
@@ -60,6 +61,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
       buttonText,
       isCurrentPlan = false,
       icon,
+      onClick,
       ...props
     },
     ref
@@ -107,6 +109,7 @@ const PricingCard = React.forwardRef<HTMLDivElement, PricingCardProps>(
               : "outline"
           }
           disabled={isCurrentPlan}
+          onClick={onClick}
         >
           {isCurrentPlan ? "Current plan" : buttonText}
         </Button>

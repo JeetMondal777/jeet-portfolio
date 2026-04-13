@@ -1,24 +1,43 @@
 import Image from "next/image";
+import { Bot, ShoppingCart, BarChart3, Smartphone } from 'lucide-react';
+import jewels from "../../public/projecs/jewels.png"
+import eduhub from "../../public/projecs/eduhub.png"
+import myLibrary from "../../public/projecs/myLibrary.png"
 
 const projects = [
   {
-    title: "CyberGuard Intelligence",
-    description:
-      "Real-time threat detection and visualization engine for enterprise-level network monitoring with microsecond latency.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDgqgIRvvGayWd9Vrrlpis2RjPy0oYt1C-KzkIm_w2rQdWBfc_JrsKGeoWs4XMcwkhryPhE3yUgSQXVaAuvzfwNxc-2cW02cjECGaBDDVwwBiolO3NOjXPBYn39f6_AEt8_xWrkPLjiSJblRj71eIgDFD6J9f7KQn1L55er3w4UWZ6--tufd-jS5ENULb3e4jcQIDimRLJPQjPLvAQCLIzj6PAMBnq9Uv973nhjTl1W3LqRnEhfiyWLGq1T1JvEwn5uynYWimBGlM0",
-    tags: ["Next.js", "WebSockets", "Redis"],
-    offset: false,
+    icon: Bot,
+    title: 'EduHub : AI YouTube Learning Assistant',
+    description: 'Full-stack AI application with OpenAI integration for personalized learning experiences',
+    tags: ['React', "Tailwind", 'Node.js', 'OpenAI'],
+    colors: 'from-purple-600 to-pink-600',
+    image: eduhub,
+    link : "https://drive.google.com/file/d/1SconYeP3JaktLVG2Gs0utaTUzSpRz8me/view?usp=drivesdk",
+    github :"https://github.com/JeetMondal777/smart-mentor",
+    offset: false
   },
   {
-    title: "LuxeCommerce Ecosystem",
-    description:
-      "A headless commerce solution for luxury fashion brands featuring AR fitting rooms and global inventory synchronization.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBla_MiQ7iqcyB9dXR-iG59FcxFnaLRMmxRALBlRl0kaHM8JZWy7KQ7ibTi5WHHOIP1_9fL01jvv9UghuETRwuswLrQJFHsFGtkvkNnimwVRO0yAtXt-gpIfJGfF0opWd3Irh0TcOhkxwiYvrDHdrsRYFkPaSf8gg2SVw1fVJNHMMOpx-Pevz2Gz1m49dVUR92e7UFNVu3xEfBK9xnuC-_Mqv-K7tTzNxC9QEwcSwsV0twqmPVBaPgCgiNlmmkerMUcoSmbxBcUX6w",
-    tags: ["React Native", "Node.js", "Stripe"],
-    offset: true,
+    icon: ShoppingCart,
+    title: 'Jewels : Premium E-Commerce Jewellery Platform',
+    description: 'Scalable and premium looking E-Commerce solution with admin dashboard',
+    tags: ['Next.js', 'MongoDB', 'Framer-Motion'],
+    colors: 'from-blue-600 to-purple-600',
+    image: jewels,
+    link :"https://jewels-frontend.vercel.app/",
+    github :"https://github.com/JeetMondal777/jwellery-web",
+    offset: true
   },
+  // {
+  //   icon: BarChart3,
+  //   title: 'My Library : Premium wooden themed book discussion platform',
+  //   description: 'A platform for users to discover, read, and share stories and books with a focus on community engagement.',
+  //   tags: ['React', 'Express', 'Redis', "Socket.io", "Cloudinary"],
+  //   colors: 'from-green-600 to-blue-600',
+  //   image: myLibrary,
+  //   link: "https://book-discussion-frontend.vercel.app",
+  //   github:"https://github.com/JeetMondal777/Book_Discussion",
+  //   offset: false
+  // }
 ];
 
 export default function ProjectsSection() {
@@ -27,7 +46,7 @@ export default function ProjectsSection() {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
           <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-            Selected Works
+            Best Works
           </h2>
           <p className="text-on-surface-variant max-w-md">
             A collection of architectural digital products built with

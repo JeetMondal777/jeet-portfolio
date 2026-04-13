@@ -88,12 +88,12 @@ export default function ServicesSection() {
       {/* Two-column layout: Orbital Timeline + Pricing */}
       <div className="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center gap-8">
         {/* Orbital Timeline */}
-        <div className="relative ml-[-10%] flex-1 max-w-3xl w-full">
+        <div className="relative ml-0 md:ml-[-10%] flex-1 max-w-3xl w-full">
           <RadialOrbitalTimeline timelineData={servicesData} />
         </div>
 
         {/* Pricing Cards */}
-        <div className="flex gap-6 w-full lg:w-auto lg:min-w-[460px] ">
+        <div className="flex justify-center items-center flex-col md:flex-row gap-6 w-full lg:w-auto lg:min-w-[460px] ">
           {/* Budget Plan */}
           <PricingCard
             planName="Budget"
@@ -108,6 +108,10 @@ export default function ServicesSection() {
               "1 month post-launch support",
             ]}
             buttonText="Get Started"
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('populateContactMessage', { detail: 'I am choosing budget plan (5$/hr)' }));
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             icon={<Rocket className="w-6 h-6" />}
             className="bg-surface-container-low w-80 border-outline-variant/20"
           />
@@ -128,6 +132,10 @@ export default function ServicesSection() {
               "3 months post-launch support",
             ]}
             buttonText="Let's Talk"
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('populateContactMessage', { detail: "Let's start building premium !!" }));
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             icon={<Gem className="w-6 h-6" />}
             className="bg-surface-container-low border-primary/30"
           />

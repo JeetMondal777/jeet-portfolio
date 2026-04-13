@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import me from "../../public/me (1).png"
 import Image from "next/image";
+import { useIsMobile } from "@/app/hooks/isMobile";
 
 interface TimelineItem {
   id: number;
@@ -37,6 +38,7 @@ export default function RadialOrbitalTimeline({
     x: 0,
     y: 0,
   });
+  const isMobile = useIsMobile();
   const [activeNodeId, setActiveNodeId] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const orbitRef = useRef<HTMLDivElement>(null);
@@ -115,8 +117,8 @@ export default function RadialOrbitalTimeline({
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = 200;
     const radian = (angle * Math.PI) / 180;
+    const radius = isMobile ? 150 : 200;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
     const y = radius * Math.sin(radian) + centerOffset.y;
@@ -223,7 +225,7 @@ export default function RadialOrbitalTimeline({
 
                 <div
                   className={`
-                  w-14 h-14 rounded-full flex items-center justify-center
+                  w-10 h-10 md:w-14 md:h-14  rounded-full flex items-center justify-center
                   ${
                     isExpanded
                       ? "bg-primary text-on-primary-container"
@@ -243,14 +245,14 @@ export default function RadialOrbitalTimeline({
                   ${isExpanded ? "scale-125" : ""}
                 `}
                 >
-                  <Icon size={40} />
+                  <Icon size={isMobile ? 30 : 40} />
                 </div>
 
                 <div
                   className={`
                   absolute top-16 left-1/2 -translate-x-1/2 whitespace-nowrap
-                  text-sm font-semibold tracking-wider
-                  transition-all duration-300
+                  text-xs md:text-sm font-semibold tracking-wider
+                  transition-all duration-300 
                   ${isExpanded ? "text-on-surface scale-110" : "text-on-surface-variant"}
                 `}
                 >

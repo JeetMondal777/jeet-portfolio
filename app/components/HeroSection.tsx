@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MorphingText } from "@/components/ui/liquid-text";
+import { FlipWords } from "@/components/ui/flip-words";
 
 const professions = [
   "Full Stack Engineer",
@@ -14,7 +14,7 @@ const professions = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center pt-0 md:pt-20 overflow-hidden hero-gradient">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary-dim/5 rounded-full blur-[150px]" />
@@ -51,21 +51,24 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        <div className="relative z-20 flex flex-col items-center text-center mt-12 md:mt-66">
-          <MorphingText
-            texts={professions}
-            className="h-12 md:h-20 max-w-screen-lg font-headline text-[24pt] md:text-[40pt] lg:text-[4rem] font-extrabold tracking-tight text-primary mb-3"
-          />
+        <div className="relative z-20 flex flex-col items-center text-center mt-60 md:mt-66">
+          <div className="flex items-center justify-center gap-2">
+            <span className="font-headline text-[16pt] md:text-[40pt] lg:text-[4rem] font-extrabold tracking-tight text-on-surface">I&apos;M A</span>
+            <FlipWords
+              words={professions}
+              className="font-headline text-[18pt] md:text-[40pt] lg:text-[4rem] font-extrabold tracking-tight text-primary"
+            />
+          </div>
           <p className="max-w-2xl mx-auto text-lg text-on-surface-variant leading-relaxed mb-12">
             Engineering high-performance digital ecosystems with architectural
             precision and editorial elegance.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
             <button className="w-full sm:w-auto px-10 py-4 bg-gradient-to-br from-primary to-primary-dim text-on-primary-container rounded-md font-bold text-lg hover:shadow-[0_0_30px_rgba(163,166,255,0.4)] transition-all active:scale-95">
-              View Portfolio
+              Let's Connect
             </button>
             <button className="w-full sm:w-auto px-10 py-4 bg-transparent border border-outline-variant/20 rounded-md font-bold text-lg text-on-surface hover:bg-surface-container-high transition-all active:scale-95">
-              Get in Touch
+              Explore More
             </button>
           </div>
         </div>
