@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import RotatingEarth from "@/components/ui/wireframe-dotted-globe";
 import { BsGithub } from "react-icons/bs";
 import { GrLinkedinOption } from "react-icons/gr";
 import { RiTwitterXLine } from "react-icons/ri";
 import { BiLogoGmail } from "react-icons/bi";
-
 
 const projectTypes = [
   "Web App",
@@ -31,13 +31,17 @@ export default function ContactSection() {
         setMessage(customEvent.detail);
       }
     };
-    window.addEventListener('populateContactMessage', handlePopulateMessage);
-    return () => window.removeEventListener('populateContactMessage', handlePopulateMessage);
+    window.addEventListener("populateContactMessage", handlePopulateMessage);
+    return () =>
+      window.removeEventListener(
+        "populateContactMessage",
+        handlePopulateMessage,
+      );
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     let projectText = "";
     if (selectedType !== "Other") {
       projectText = `my project is kind of "${selectedType}"`;
@@ -57,7 +61,7 @@ ${email}`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
     // Replace YOUR_PHONE_NUMBER_HERE with your actual WhatsApp number with country code (e.g., 919876543210 for India)
-    window.open(`https://wa.me/917866865971?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/917866865971?text=${encodedMessage}`, "_blank");
   };
 
   return (
@@ -84,18 +88,23 @@ ${email}`;
         {/* Left Column */}
         <div className="lg:col-span-5 space-y-12">
           <div className="bg-surface-container-low p-8 rounded-xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <h3 className="font-headline text-3xl font-bold text-on-background mb-4">
+            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <h3 className="font-headline text-3xl font-bold text-on-background mb-4 relative z-10">
               Start a Conversation
             </h3>
-            <p className="text-on-surface-variant leading-relaxed mb-8">
+            <p className="text-on-surface-variant leading-relaxed mb-8 relative z-10">
               I specialize in high-performance web architecture, bespoke UI/UX
               systems, and scalable product engineering. If you have a project
               that demands technical precision and editorial elegance, I&apos;m
               ready to listen.
             </p>
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
+            <div className="space-y-6 relative z-10">
+              <Link
+                href="mailto:hello@itsjeet.pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group cursor-pointer"
+              >
                 <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
                   <span className="material-symbols-outlined">mail</span>
                 </div>
@@ -103,9 +112,11 @@ ${email}`;
                   <div className="text-xs font-bold text-primary tracking-widest uppercase">
                     Email Me
                   </div>
-                  <a href="mailto:hello@itsjeet.pro" target="_blank" className="text-lg font-medium">hello@itsjeet.pro</a>
+                  <span className="text-lg font-medium group-hover:text-primary transition-colors">
+                    hello@itsjeet.pro
+                  </span>
                 </div>
-              </div>
+              </Link>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
                   <span className="material-symbols-outlined">location_on</span>
@@ -238,18 +249,31 @@ ${email}`;
                   Response time typically &lt; 24 hours
                 </p>
                 <div className="flex justify-center gap-4 mt-6">
-                  <a href="https://github.com/JeetMondal777" className="text-on-surface-variant hover:text-primary transition-colors">
+                  <Link
+                    href="https://github.com/JeetMondal777"
+                    target="_blank"
+                    className="text-on-surface-variant hover:text-primary transition-colors"
+                  >
                     <BsGithub size={24} />
-                  </a>
-                  <a href="#" className="text-on-surface-variant hover:text-primary transition-colors">
+                  </Link>
+                  <Link
+                    href="#"
+                    className="text-on-surface-variant hover:text-primary transition-colors"
+                  >
                     <GrLinkedinOption size={24} />
-                  </a>
-                  <a href="#" className="text-on-surface-variant hover:text-primary transition-colors">
+                  </Link>
+                  <Link
+                    href="#"
+                    className="text-on-surface-variant hover:text-primary transition-colors"
+                  >
                     <RiTwitterXLine size={24} />
-                  </a>
-                  <a href="mailto:cs2349diatm@gmail.com" className="text-on-surface-variant hover:text-primary transition-colors">
+                  </Link>
+                  <Link
+                    href="mailto:cs2349diatm@gmail.com"
+                    className="text-on-surface-variant hover:text-primary transition-colors"
+                  >
                     <BiLogoGmail size={24} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </form>
