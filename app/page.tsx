@@ -14,6 +14,7 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import HireModal from "./components/HireModal";
 import LeftToRightTopArrow from "@/components/ui/svg/LeftToRightTopArrow";
+import AboutSectionnn from "./components/AboutSectionnn";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -73,8 +74,12 @@ export default function Home() {
         <TechMarquee />
         <ProjectsSection />
         <ExecutionProcess />
-        <AboutSection />
-        {/* <MethodologySection /> */}
+        <div className="block md:hidden">
+          <AboutSection />
+        </div>
+        <div className="hidden md:block">
+          <AboutSectionnn />
+        </div>
         <ServicesSection />
         <ContactSection />
         {/* <LeftToRightTopArrow /> */}

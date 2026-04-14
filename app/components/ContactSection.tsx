@@ -8,6 +8,7 @@ import { BsGithub } from "react-icons/bs";
 import { GrLinkedinOption } from "react-icons/gr";
 import { RiTwitterXLine } from "react-icons/ri";
 import { BiLogoGmail } from "react-icons/bi";
+import { socials } from "@/data/socials";
 
 const projectTypes = [
   "Web App",
@@ -61,7 +62,7 @@ ${email}`;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
     // Replace YOUR_PHONE_NUMBER_HERE with your actual WhatsApp number with country code (e.g., 919876543210 for India)
-    window.open(`https://wa.me/917866865971?text=${encodedMessage}`, "_blank");
+    window.open(`${socials.whatsapp.href}?text=${encodedMessage}`, "_blank");
   };
 
   return (
@@ -250,20 +251,22 @@ ${email}`;
                 </p>
                 <div className="flex justify-center gap-4 mt-6">
                   <Link
-                    href="https://github.com/JeetMondal777"
+                    href={socials.github.href}
                     target="_blank"
                     className="text-on-surface-variant hover:text-primary transition-colors"
                   >
                     <BsGithub size={24} />
                   </Link>
                   <Link
-                    href="#"
+                    href={socials.linkedin.href}
+                    target="_blank"
                     className="text-on-surface-variant hover:text-primary transition-colors"
                   >
                     <GrLinkedinOption size={24} />
                   </Link>
                   <Link
-                    href="#"
+                    href={socials.x.href}
+                    target="_blank"
                     className="text-on-surface-variant hover:text-primary transition-colors"
                   >
                     <RiTwitterXLine size={24} />

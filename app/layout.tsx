@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
+import SocialFloatingIcons from "./components/SocialFloatingIcons";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -33,7 +34,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <SocialFloatingIcons />
+      </body>
     </html>
   );
 }

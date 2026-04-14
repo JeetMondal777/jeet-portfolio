@@ -1,5 +1,6 @@
 import Image from "next/image";
 import me from "../../public/me_art.png"
+import ExperienceAccordion from "./ExperienceAccordion";
 
 export default function AboutSection() {
   return (
@@ -17,7 +18,7 @@ export default function AboutSection() {
           </div>
           <div className="absolute -bottom-6 -right-6 px-8 py-6 bg-surface-container-highest glass-effect border border-outline-variant/20 rounded-xl">
             <div className="text-4xl font-headline font-black text-primary mb-1">
-              6+
+              3+
             </div>
             <div className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold">
               Years of Engineering
@@ -61,6 +62,8 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
+
+          <ExperienceAccordion />
         </div>
       </div>
     </section>
