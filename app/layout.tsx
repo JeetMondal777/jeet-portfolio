@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import SocialFloatingIcons from "./components/SocialFloatingIcons";
+import MobileDock from "@/components/ui/mobile-dock";
 import LenisProvider from "./components/LenisProvider";
 
 const manrope = Manrope({
@@ -17,9 +18,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JEET.DEV | Digital Architect",
+  title: "JEET Mondal | Full Stack Software Engineer",
   description:
     "Engineering high-performance digital ecosystems with architectural precision and editorial elegance.",
+  icons: {
+    icon: "/me (1).png",
+  },
 };
 
 export default function RootLayout({
@@ -38,7 +42,10 @@ export default function RootLayout({
       <body>
         <LenisProvider>
           {children}
-          <SocialFloatingIcons />
+          <div className="hidden md:block">
+            <SocialFloatingIcons />
+          </div>
+          <MobileDock />
         </LenisProvider>
       </body>
     </html>

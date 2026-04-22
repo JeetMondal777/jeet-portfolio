@@ -53,7 +53,7 @@ export default function Navbar({
   return (
     <>
       <div className="fixed top-0 left-1/2 -translate-x-1/2 w-96 h-24 bg-primary/20 blur-[60px] rounded-full pointer-events-none z-40" />
-      <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 glass-panel border border-outline-variant/20 rounded-full px-2 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex items-center gap-2 max-w-fit">
+      <nav className="hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 glass-panel border border-outline-variant/20 rounded-full px-2 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] items-center gap-2 max-w-fit">
         <div className="flex items-center">
           <div className="flex items-center gap-8 pl-6 pr-2">
             {/* Logo — smooth scroll to top */}

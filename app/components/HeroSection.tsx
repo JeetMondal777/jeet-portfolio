@@ -14,7 +14,7 @@ const professions = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-0 md:pt-20 overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center md:pt-20 overflow-hidden hero-gradient">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary-dim/5 rounded-full blur-[150px]" />

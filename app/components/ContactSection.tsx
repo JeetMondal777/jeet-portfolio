@@ -163,7 +163,7 @@ ${email}`;
             <div className="absolute bottom-6 left-6 z-10">
               <span className="inline-flex items-center gap-2 bg-surface-container-highest/60 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-primary">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                AVAILABLE FOR HIRE
+                AVAILABLE TO HIRE
               </span>
             </div>
           </div>
@@ -171,7 +171,7 @@ ${email}`;
 
         {/* Right Column: Form */}
         <div className="lg:col-span-7">
-          <div className="glass-panel p-8 md:p-12 rounded-xl border border-outline-variant/10 shadow-2xl relative">
+          <div className="glass-panel p-6 md:p-12 rounded-xl border border-outline-variant/10 shadow-2xl relative">
             <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
