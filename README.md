@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio
+
+A modern, high-performance personal portfolio built with Next.js 16, React 19, and Tailwind CSS v4. Features smooth animations, interactive UI components, and a clean design system.
+
+## Features
+
+- **Next.js 16** - App Router, Server Components, and optimized rendering
+- **Tailwind CSS v4** - Utility-first styling with custom design tokens
+- **Framer Motion** - Smooth, physics-based animations
+- **Lenis** - Buttery smooth scroll interpolation
+- **Three.js** - 3D graphics and visual effects
+- **Radix UI** - Accessible, unstyled UI components
+- **react-icons** - Icon library with 1000+ icons
+
+## Tech Stack
+
+### Frontend
+- React 19.2.4
+- Next.js 16.2.1
+- TypeScript 5
+- Tailwind CSS 4
+
+### Animation & Motion
+- Framer Motion 12
+- Motion 12
+- Lenis 1.3.23 (smooth scroll)
+
+### UI Components
+- Radix UI (Accordion, Slot, etc.)
+- Lucide React (icons)
+- React Icons (5.6.0)
+
+### 3D & Graphics
+- Three.js 0.183.2
+- D3 7.9.0 (data visualization)
+
+### Utilities
+- clsx + tailwind-merge (cn utility)
+- Class Variance Authority (CVA)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- pnpm (recommended) or npm
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+my-app/
+├── app/
+│   ├── components/       # Page-specific components
+│   │   ├── HeroSection.tsx
+│   │   ├── AboutSection.tsx
+│   │   ├── ProjectsSection.tsx
+│   │   ├── ServicesSection.tsx
+│   │   ├── ContactSection.tsx
+│   │   ├── TechMarquee.tsx
+│   │   └── ...
+│   ├── layout.tsx        # Root layout with fonts
+│   └── page.tsx          # Home page
+├── components/
+│   └── ui/               # Reusable UI components
+│       ├── infinite-slider.tsx
+│       ├── radial-orbital-timeline.tsx
+│       ├── price.tsx
+│       └── ...
+├── lib/
+│   └── utils.ts          # cn() utility function
+├── public/               # Static assets
+└── package.json
+```
 
-## Learn More
+## Key Components
 
-To learn more about Next.js, take a look at the following resources:
+### InfiniteSlider
+A smooth infinite marquee slider for displaying tech stacks or any horizontal scrolling content. Supports speed control, hover interactions, and both horizontal/vertical directions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### RadialOrbitalTimeline
+An interactive radial timeline for displaying services/processes with orbiting nodes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Pricing Cards
+Beautiful pricing cards with feature lists and call-to-action buttons.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm dev      # Start development server
+pnpm build    # Build for production
+pnpm start    # Start production server
+pnpm lint     # Run ESLint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+1. Push your code to GitHub
+2. Import your repository to Vercel
+3. Deploy
+
+<!-- ## License
+
+MIT -->

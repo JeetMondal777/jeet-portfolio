@@ -56,6 +56,9 @@ importers:
       react-icons:
         specifier: ^5.6.0
         version: 5.6.0(react@19.2.4)
+      react-use-measure:
+        specifier: ^2.1.7
+        version: 2.1.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -2204,6 +2207,15 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-use-measure@2.1.7:
+    resolution: {integrity: sha512-KrvcAo13I/60HpwGO5jpW7E9DfusKyLPLvuHlUyP5zqnmAPhNc6qTRjUQrdTADl0lpPpDVU2/Gg51UlOGHXbdg==}
+    peerDependencies:
+      react: '>=16.13'
+      react-dom: '>=16.13'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
 
   react@19.2.4:
     resolution: {integrity: sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==}
@@ -4687,6 +4699,12 @@ snapshots:
       react: 19.2.4
 
   react-is@16.13.1: {}
+
+  react-use-measure@2.1.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+    dependencies:
+      react: 19.2.4
+    optionalDependencies:
+      react-dom: 19.2.4(react@19.2.4)
 
   react@19.2.4: {}
 
