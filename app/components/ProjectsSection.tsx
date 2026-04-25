@@ -53,16 +53,16 @@ export default function ProjectsSection() {
             performance and aesthetics in mind.
           </p>
         </div>
-        <div className="h-px flex-grow bg-outline-variant/20 mx-8 hidden md:block" />
-        <a
-          className="text-primary font-bold flex items-center gap-2 group"
-          href="#"
-        >
-          View all projects{" "}
-          <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
-            arrow_forward
-          </span>
-        </a>
+        {/* <div className="h-px flex-grow bg-outline-variant/20 mx-8 hidden md:block" /> */}
+          {/* <a
+            className="text-primary font-bold flex items-center gap-2 group"
+            href="#"
+          >
+            View all projects{" "}
+            <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
+          </a> */}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
