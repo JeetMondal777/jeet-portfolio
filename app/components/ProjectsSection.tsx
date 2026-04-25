@@ -23,8 +23,8 @@ const projects = [
     tags: ['Next.js', 'MongoDB', 'Framer-Motion'],
     colors: 'from-blue-600 to-purple-600',
     image: jewels,
-    link :"https://jewels-frontend.vercel.app/",
-    github :"https://github.com/JeetMondal777/jwellery-web",
+    link: "https://jewels.xanatomy.in",
+    github: "https://github.com/JeetMondal777/jwellery-web",
     offset: true
   },
   // {
@@ -71,17 +71,22 @@ export default function ProjectsSection() {
             key={project.title}
             className={`group relative ${project.offset ? "mt-12 md:mt-24" : ""}`}
           >
-            <div className="relative aspect-video rounded-xl overflow-hidden mb-8 shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
+            <div className="relative aspect-video rounded-xl overflow-hidden mb-8 shadow-2xl transition-all duration-500 group-hover:shadow-primary/20">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
-                className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
-                <button className="bg-primary text-on-primary-container px-6 py-2 rounded-md font-bold text-sm">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary text-on-primary-container px-6 py-2 rounded-md font-bold text-sm hover:opacity-90 transition-opacity"
+                >
                   Case Study
-                </button>
+                </a>
               </div>
             </div>
 
@@ -102,12 +107,17 @@ export default function ProjectsSection() {
             <p className="text-on-surface-variant mb-6 leading-relaxed">
               {project.description}
             </p>
-            <button className="flex items-center gap-2 text-on-surface font-bold text-sm border-b border-outline-variant/30 pb-1 hover:border-primary transition-all">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-on-surface font-bold text-sm border-b border-outline-variant/30 pb-1 hover:border-primary hover:text-primary transition-all"
+            >
               View Project{" "}
               <span className="material-symbols-outlined text-lg">
                 open_in_new
               </span>
-            </button>
+            </a>
           </div>
         ))}
       </div>

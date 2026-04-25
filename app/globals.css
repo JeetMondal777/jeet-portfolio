@@ -165,3 +165,12 @@ body {
 @utility shadow-orbital {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
+
+/* Payment icon hover effect */
+.payment-icon {
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+.payment-icon:hover {
+  filter: grayscale(0) brightness(1.1);
+}

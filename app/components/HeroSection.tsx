@@ -12,6 +12,15 @@ const professions = [
   "SAAS Specialist",
 ];
 
+function smoothScrollTo(id: string) {
+  const els = Array.from(document.querySelectorAll(`[id="${id}"]`));
+  const target =
+    els.find((el) => (el as HTMLElement).offsetParent !== null) ?? els[0];
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center md:pt-20 overflow-hidden hero-gradient">
@@ -64,10 +73,16 @@ export default function HeroSection() {
             precision and editorial elegance.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10">
-            <button className="w-full sm:w-auto px-10 py-4 bg-gradient-to-br from-primary to-primary-dim text-on-primary-container rounded-md font-bold text-lg hover:shadow-[0_0_30px_rgba(163,166,255,0.4)] transition-all active:scale-95">
-              Let's Connect
+            <button
+              onClick={() => smoothScrollTo("contact")}
+              className="w-full sm:w-auto px-10 py-4 bg-gradient-to-br from-primary to-primary-dim text-on-primary-container rounded-md font-bold text-lg hover:shadow-[0_0_30px_rgba(163,166,255,0.4)] transition-all active:scale-95"
+            >
+              Let&apos;s Connect
             </button>
-            <button className="w-full sm:w-auto px-10 py-4 bg-transparent border border-outline-variant/20 rounded-md font-bold text-lg text-on-surface hover:bg-surface-container-high transition-all active:scale-95">
+            <button
+              onClick={() => smoothScrollTo("work")}
+              className="w-full sm:w-auto px-10 py-4 bg-transparent border border-outline-variant/20 rounded-md font-bold text-lg text-on-surface hover:bg-surface-container-high transition-all active:scale-95"
+            >
               Explore More
             </button>
           </div>
