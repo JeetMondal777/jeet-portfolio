@@ -50,7 +50,7 @@ export default function HeroSection() {
             }}
           >
             <Image
-              src="/me (1).png"
+              src="/me.png"
               alt="Jeet - 3D Avatar"
               width={500}
               height={500}

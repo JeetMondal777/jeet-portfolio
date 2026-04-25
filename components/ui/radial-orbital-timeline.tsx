@@ -4,7 +4,7 @@ import { ArrowRight, Link, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import me from "../../public/me (1).png"
+import me from "../../public/me.png"
 import Image from "next/image";
 import { useIsMobile } from "@/app/hooks/isMobile";
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import SocialFloatingIcons from "./components/SocialFloatingIcons";
 import MobileDock from "@/components/ui/mobile-dock";
 import LenisProvider from "./components/LenisProvider";
+import me from "@/public/me.png";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -22,7 +23,9 @@ export const metadata: Metadata = {
   description:
     "Engineering high-performance digital ecosystems with architectural precision and editorial elegance.",
   icons: {
-    icon: "/me (1).png",
+    icon: me.src,
+    shortcut: me.src,
+    apple: me.src,
   },
 };
 
