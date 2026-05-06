@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JEET Mondal | Full Stack Software Engineer",
+  title: "JEET MONDAL | FULL STACK SOFTWARE ENGINEER",
   description:
-    "Engineering high-performance digital ecosystems with architectural precision and editorial elegance.",
+    "Founder of Xanatomy, Engineering high-performance digital ecosystems with architectural precision and editorial elegance.",
 };
 
 export default function RootLayout({
